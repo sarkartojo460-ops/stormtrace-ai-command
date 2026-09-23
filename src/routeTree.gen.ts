@@ -10,33 +10,141 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AlertCenterRouteImport } from './routes/alert-center'
+import { Route as AnomalyTrackingRouteImport } from './routes/anomaly-tracking'
+import { Route as DownscalingLabRouteImport } from './routes/downscaling-lab'
+import { Route as HistoricalReplayRouteImport } from './routes/historical-replay'
+import { Route as LiveAnalysisRouteImport } from './routes/live-analysis'
+import { Route as PhysicsValidationRouteImport } from './routes/physics-validation'
+import { Route as SystemRouteImport } from './routes/system'
+import { Route as VerificationRouteImport } from './routes/verification'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AlertCenterRoute = AlertCenterRouteImport.update({
+  id: '/alert-center',
+  path: '/alert-center',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AnomalyTrackingRoute = AnomalyTrackingRouteImport.update({
+  id: '/anomaly-tracking',
+  path: '/anomaly-tracking',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DownscalingLabRoute = DownscalingLabRouteImport.update({
+  id: '/downscaling-lab',
+  path: '/downscaling-lab',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HistoricalReplayRoute = HistoricalReplayRouteImport.update({
+  id: '/historical-replay',
+  path: '/historical-replay',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LiveAnalysisRoute = LiveAnalysisRouteImport.update({
+  id: '/live-analysis',
+  path: '/live-analysis',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PhysicsValidationRoute = PhysicsValidationRouteImport.update({
+  id: '/physics-validation',
+  path: '/physics-validation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SystemRoute = SystemRouteImport.update({
+  id: '/system',
+  path: '/system',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VerificationRoute = VerificationRouteImport.update({
+  id: '/verification',
+  path: '/verification',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/alert-center': typeof AlertCenterRoute
+  '/anomaly-tracking': typeof AnomalyTrackingRoute
+  '/downscaling-lab': typeof DownscalingLabRoute
+  '/historical-replay': typeof HistoricalReplayRoute
+  '/live-analysis': typeof LiveAnalysisRoute
+  '/physics-validation': typeof PhysicsValidationRoute
+  '/system': typeof SystemRoute
+  '/verification': typeof VerificationRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/alert-center': typeof AlertCenterRoute
+  '/anomaly-tracking': typeof AnomalyTrackingRoute
+  '/downscaling-lab': typeof DownscalingLabRoute
+  '/historical-replay': typeof HistoricalReplayRoute
+  '/live-analysis': typeof LiveAnalysisRoute
+  '/physics-validation': typeof PhysicsValidationRoute
+  '/system': typeof SystemRoute
+  '/verification': typeof VerificationRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/alert-center': typeof AlertCenterRoute
+  '/anomaly-tracking': typeof AnomalyTrackingRoute
+  '/downscaling-lab': typeof DownscalingLabRoute
+  '/historical-replay': typeof HistoricalReplayRoute
+  '/live-analysis': typeof LiveAnalysisRoute
+  '/physics-validation': typeof PhysicsValidationRoute
+  '/system': typeof SystemRoute
+  '/verification': typeof VerificationRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/alert-center'
+    | '/anomaly-tracking'
+    | '/downscaling-lab'
+    | '/historical-replay'
+    | '/live-analysis'
+    | '/physics-validation'
+    | '/system'
+    | '/verification'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/alert-center'
+    | '/anomaly-tracking'
+    | '/downscaling-lab'
+    | '/historical-replay'
+    | '/live-analysis'
+    | '/physics-validation'
+    | '/system'
+    | '/verification'
+  id:
+    | '__root__'
+    | '/'
+    | '/alert-center'
+    | '/anomaly-tracking'
+    | '/downscaling-lab'
+    | '/historical-replay'
+    | '/live-analysis'
+    | '/physics-validation'
+    | '/system'
+    | '/verification'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AlertCenterRoute: typeof AlertCenterRoute
+  AnomalyTrackingRoute: typeof AnomalyTrackingRoute
+  DownscalingLabRoute: typeof DownscalingLabRoute
+  HistoricalReplayRoute: typeof HistoricalReplayRoute
+  LiveAnalysisRoute: typeof LiveAnalysisRoute
+  PhysicsValidationRoute: typeof PhysicsValidationRoute
+  SystemRoute: typeof SystemRoute
+  VerificationRoute: typeof VerificationRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +156,75 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/alert-center': {
+      id: '/alert-center'
+      path: '/alert-center'
+      fullPath: '/alert-center'
+      preLoaderRoute: typeof AlertCenterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/anomaly-tracking': {
+      id: '/anomaly-tracking'
+      path: '/anomaly-tracking'
+      fullPath: '/anomaly-tracking'
+      preLoaderRoute: typeof AnomalyTrackingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/downscaling-lab': {
+      id: '/downscaling-lab'
+      path: '/downscaling-lab'
+      fullPath: '/downscaling-lab'
+      preLoaderRoute: typeof DownscalingLabRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/historical-replay': {
+      id: '/historical-replay'
+      path: '/historical-replay'
+      fullPath: '/historical-replay'
+      preLoaderRoute: typeof HistoricalReplayRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/live-analysis': {
+      id: '/live-analysis'
+      path: '/live-analysis'
+      fullPath: '/live-analysis'
+      preLoaderRoute: typeof LiveAnalysisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/physics-validation': {
+      id: '/physics-validation'
+      path: '/physics-validation'
+      fullPath: '/physics-validation'
+      preLoaderRoute: typeof PhysicsValidationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/system': {
+      id: '/system'
+      path: '/system'
+      fullPath: '/system'
+      preLoaderRoute: typeof SystemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/verification': {
+      id: '/verification'
+      path: '/verification'
+      fullPath: '/verification'
+      preLoaderRoute: typeof VerificationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AlertCenterRoute: AlertCenterRoute,
+  AnomalyTrackingRoute: AnomalyTrackingRoute,
+  DownscalingLabRoute: DownscalingLabRoute,
+  HistoricalReplayRoute: HistoricalReplayRoute,
+  LiveAnalysisRoute: LiveAnalysisRoute,
+  PhysicsValidationRoute: PhysicsValidationRoute,
+  SystemRoute: SystemRoute,
+  VerificationRoute: VerificationRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
