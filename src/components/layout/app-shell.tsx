@@ -1,4 +1,4 @@
-import { Link, useHydrated, useRouterState } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState, type ReactNode } from "react";
 import {
   Activity, AlertTriangle, Atom, Braces, ChevronLeft, CloudLightning, FlaskConical,
@@ -33,9 +33,10 @@ export function AppShell({ children }: { children: ReactNode }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const path = useRouterState({ select: (state) => state.location.pathname });
   const health = useBackendHealth();
-  const hydrated = useHydrated();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
   const { mode, setMode, currentJob, startReplay } = useStormtrace();
-  const online = hydrated && health.isSuccess;
+  const online = mounted && health.isSuccess;
   return (
     <TooltipProvider delayDuration={300}>
       <div className="min-h-screen bg-background text-foreground">
